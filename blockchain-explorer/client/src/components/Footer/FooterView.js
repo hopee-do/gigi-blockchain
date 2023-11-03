@@ -32,8 +32,6 @@ const FooterView = ({ classes }) => (
 			<div className={classes.footer}>
 				{'GIGI BLOCKCHAIN Explorer Client Version: '}
 				{clientJson.version}
-				&emsp;
-				{'Fabric Compatibility: '} {FabricVersion.map(v => v)}
 			</div>
 		</div>
 	</div>
