@@ -1,0 +1,61 @@
+{
+	"name": "gigi-network",
+	"version": "1.0.0",
+	"license": "Apache-2.0",
+	"client": {
+		"tlsEnable": true,
+		"adminCredential": {
+			"id": "exploreradmin",
+			"password": "exploreradminpw"
+		},
+		"enableAuthentication": false,
+		"organization": "GigiMSP",
+		"connection": {
+			"timeout": {
+				"peer": {
+					"endorser": "300"
+				},
+				"orderer": "300"
+			}
+		}
+	},
+	"channels": {
+		"gigi": {
+			"peers": {
+				"peer0.blockchain.gigi.com.vn": {}
+			},
+			"connection": {
+				"timeout": {
+					"peer": {
+						"endorser": "6000",
+						"eventHub": "6000",
+						"eventReg": "6000"
+					}
+				}
+			}
+		}
+	},
+	"organizations": {
+		"GigiMSP": {
+			"mspid": "GigiMSP",
+			"adminPrivateKey": {
+				"path": "/home/ubuntu/gigi-blockchain/network/crypto-config/peerOrganizations/blockchain.gigi.com.vn/users/Admin@blockchain.gigi.com.vn/msp/keystore/priv_sk"
+			},
+			"peers": ["peer0.org1.example.com"],
+			"signedCert": {
+				"path": "/home/ubuntu/gigi-blockchain/network/crypto-config/peerOrganizations/blockchain.gigi.com.vn/users/Admin@blockchain.gigi.com.vn/msp/signcerts/Admin@blockchain.gigi.com.vn-cert.pem"
+			}
+		}
+	},
+	"peers": {
+		"peer0.blockchain.gigi.com.vn": {
+			"tlsCACerts": {
+				"path": "/home/ubuntu/gigi-blockchain/network/crypto-config/peerOrganizations/blockchain.gigi.com.vn/peers/peer0.blockchain.gigi.com.vn/tls/ca.crt"
+			},
+			"url": "grpcs://localhost:7051",
+			"grpcOptions": {
+				"ssl-target-name-override": "peer0.blockchain.gigi.com.vn"
+			}
+		}
+	}
+}
