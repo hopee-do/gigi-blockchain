@@ -1,3 +1,5 @@
 .idea
 .node_modules
 network/data
+network/crypto-config/
+channel-artifacts/
