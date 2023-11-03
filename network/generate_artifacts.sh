@@ -30,5 +30,3 @@ fi
 
 echo "Generating application channel genesis block with ${ordererType} consensus"
 configtxgen -profile ${profile} -outputBlock ./channel-artifacts/gigi.block -channelID gigi
-
-
