@@ -41,7 +41,7 @@
 			"adminPrivateKey": {
 				"path": "/home/ubuntu/gigi-blockchain/network/crypto-config/peerOrganizations/blockchain.gigi.com.vn/users/Admin@blockchain.gigi.com.vn/msp/keystore/priv_sk"
 			},
-			"peers": ["peer0.org1.example.com"],
+			"peers": ["peer0.blockchain.gigi.com.vn"],
 			"signedCert": {
 				"path": "/home/ubuntu/gigi-blockchain/network/crypto-config/peerOrganizations/blockchain.gigi.com.vn/users/Admin@blockchain.gigi.com.vn/msp/signcerts/Admin@blockchain.gigi.com.vn-cert.pem"
 			}
