@@ -9,7 +9,7 @@ export PATH="${PWD}"/../bin:"${PWD}"/../bin:"$PATH"
 export FABRIC_CFG_PATH="${PWD}"/../config
 
 export FABRIC_LOGGING_SPEC=debug:cauthdsl,policies,msp,common.configtx,common.channelconfig=info
-export ORDERER_GENERAL_LISTENPORT=6050
+export ORDERER_GENERAL_LISTENPORT=6051
 export ORDERER_GENERAL_LOCALMSPID=OrdererMSP
 export ORDERER_GENERAL_LOCALMSPDIR="${PWD}"/crypto-config/ordererOrganizations/gigi.com.vn/orderers/orderer.gigi.com.vn/msp
 export ORDERER_GENERAL_TLS_ENABLED=true
