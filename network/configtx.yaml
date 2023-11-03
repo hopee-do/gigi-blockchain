@@ -36,9 +36,6 @@ Organizations:
         Rule: "OR('OrdererMSP.admin')"
     OrdererEndpoints:
       - 127.0.0.1:6050
-      - 127.0.0.1:6051
-      - 127.0.0.1:6052
-      - 127.0.0.1:6053
   - &Gigi
     Name: GigiMSP
     # ID to load the MSP definition as
@@ -67,33 +64,6 @@ Organizations:
       # encoded in the genesis block in the Application section context
       - Host: 127.0.0.1
         Port: 7051
-  - &Hopee
-    Name: HopeeMSP
-    # ID to load the MSP definition as
-    ID: HopeeMSP
-    MSPDir: crypto-config/peerOrganizations/hopee.gigi.com.vn/msp
-    # Policies defines the set of policies at this level of the config tree
-    # For organization policies, their canonical path is usually
-    #   /Channel/<Application|Orderer>/<OrgName>/<PolicyName>
-    Policies:
-      Readers:
-        Type: Signature
-        Rule: "OR('HopeeMSP.admin', 'HopeeMSP.peer', 'HopeeMSP.client')"
-      Writers:
-        Type: Signature
-        Rule: "OR('HopeeMSP.admin', 'HopeeMSP.client')"
-      Admins:
-        Type: Signature
-        Rule: "OR('HopeeMSP.admin')"
-      Endorsement:
-        Type: Signature
-        Rule: "OR('HopeeMSP.peer')"
-    AnchorPeers:
-      # AnchorPeers defines the location of peers which can be used
-      # for cross org gossip communication.  Note, this value is only
-      # encoded in the genesis block in the Application section context
-      - Host: 127.0.0.1
-        Port: 7055
 ################################################################################
 #
 #   SECTION: Capabilities
@@ -275,14 +245,6 @@ Profiles:
             Port: 6050
             ClientTLSCert: crypto-config/ordererOrganizations/gigi.com.vn/orderers/orderer.gigi.com.vn/tls/server.crt
             ServerTLSCert: crypto-config/ordererOrganizations/gigi.com.vn/orderers/orderer.gigi.com.vn/tls/server.crt
-          - Host: 127.0.0.1
-            Port: 6051
-            ClientTLSCert: crypto-config/ordererOrganizations/gigi.com.vn/orderers/orderer2.gigi.com.vn/tls/server.crt
-            ServerTLSCert: crypto-config/ordererOrganizations/gigi.com.vn/orderers/orderer2.gigi.com.vn/tls/server.crt
-          - Host: 127.0.0.1
-            Port: 6052
-            ClientTLSCert: crypto-config/ordererOrganizations/gigi.com.vn/orderers/orderer3.gigi.com.vn/tls/server.crt
-            ServerTLSCert: crypto-config/ordererOrganizations/gigi.com.vn/orderers/orderer3.gigi.com.vn/tls/server.crt
         Options:
           TickInterval: 2500ms
           ElectionTick: 5
@@ -293,6 +255,5 @@ Profiles:
       <<: *ApplicationDefaults
       Organizations:
         - *Gigi
-        - *Hopee
       Capabilities:
         <<: *ApplicationCapabilities
