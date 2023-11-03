@@ -549,7 +549,8 @@ export class HeaderView extends Component {
 					<div>
 						<Navbar className={classes.navbarHeader} expand="lg" fixed="top">
 							<NavbarBrand href="/">
-								<img src={Logo} className={classes.logo} alt="Hyperledger Logo" />
+								{/*<img src={Logo} className={classes.logo} alt="GIGI Blockchain Logo" />*/}
+								<h3 style={{color: '#000'}}>GIGI BLOCKCHAIN</h3>
 							</NavbarBrand>
 							<NavbarToggler onClick={this.toggle}>
 								<FontAwesome name="bars" className={classes.toggleIcon} />
