@@ -8,7 +8,7 @@
 			"id": "exploreradmin",
 			"password": "exploreradminpw"
 		},
-		"enableAuthentication": true,
+		"enableAuthentication": false,
 		"organization": "GigiMSP",
 		"connection": {
 			"timeout": {
