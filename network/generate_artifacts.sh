@@ -10,7 +10,7 @@ rm -r "${PWD}"/crypto-config || true
 rm -r "${PWD}"/data || true
 
 # look for binaries in local dev environment /build/bin directory and then in local samples /bin directory
-export PATH="${PWD}"/../../fabric/build/bin:"${PWD}"/../bin:"$PATH"
+export PATH=${PWD}"/../bin:"$PATH"
 
 echo "Generating MSP certificates using cryptogen tool"
 cryptogen generate --config="${PWD}"/crypto-config.yaml
